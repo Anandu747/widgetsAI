@@ -18,8 +18,10 @@
     --foreground: #ededed;
   }
 }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -27,6 +29,8 @@ body {
 
 /* ================= landing page ================= */
 .land {
+  box-sizing: border-box;
+  width: 100%;
   min-height: 100vh;
   padding: 56px 6vw;
   color: #ecebff;
@@ -126,6 +130,8 @@ body {
   gap: 18px;
 }
 .fcard {
+  display: flex;
+  flex-direction: column;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(129, 140, 248, 0.2);
@@ -149,10 +155,16 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .fbody {
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 12px;
   padding: 14px;
+}
+
+.fbody > div:first-child {
+  min-width: 0;
 }
 .fbody b {
   display: block;
@@ -170,10 +182,11 @@ body {
   color: #c7c7ff;
 }
 .farrow {
-  width: 34px;
-  height: 34px;
+  flex: none;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -12,8 +12,7 @@ const FEATURED = [4, 5, 1].map(id => PRODUCTS.find(p => p.id === id)!);
 export default function Home() {
   return (
     <main className="land">
-      <span className="lpill"><u />INTERACTIVE DEMO</span>
-      <h1>ShopBot —<br /><span className="grad">AI Shopping Assistant</span></h1>
+      <h1>ShopBot<br /><span className="grad">AI Shopping Assistant</span></h1>
       <p className="lead">A smarter way to discover products, build your cart, and check out.</p>
       <p className="sub">Chat, search, or use voice to find the best products, get personalized recommendations, and add them to your cart — all in one place.</p>
       <div className="feats">
@@ -27,7 +26,7 @@ export default function Home() {
       <div className="fgrid">
         {FEATURED.map(p => (
           <div className="fcard" key={p.id}>
-            <div className="fimg" style={{ backgroundImage: `url(${p.img}), linear-gradient(135deg,#312e81,#1e1b4b)` }}>
+            <div className="fimg" style={{ backgroundImage: `${p.img ? `url(${p.img}), ` : ''}linear-gradient(135deg,#312e81,#1e1b4b)` }}>
               <span className="ftag">{p.tag}</span>
             </div>
             <div className="fbody">
